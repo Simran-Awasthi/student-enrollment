@@ -22,7 +22,8 @@ const MyActionProvider = ({ createChatBotMessage, setState, children }) => {
   };
 
   const showNameInputMessage = () => {
-    const botMessage = createChatBotMessage("Please enter your Name", {
+    const botMessage = createChatBotMessage("Please enter your Name....", {
+      withAvatar: false,
       delay: 500,
     });
     updateState(botMessage);
@@ -75,7 +76,7 @@ const MyActionProvider = ({ createChatBotMessage, setState, children }) => {
   };
 
   return (
-    <div>
+    <div className="w-full h-auto  gap-10 flex">
       {React.Children.map(children, (child) => {
         return React.cloneElement(child, {
           actions: {

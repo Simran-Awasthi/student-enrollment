@@ -9,6 +9,7 @@
     background-color: white !important ;
     border-radius: 1px !important;
     padding-bottom: 45px;
+    padding: 5px;
   
     
   }
@@ -42,7 +43,7 @@
   
   
   .react-chatbot-kit-chat-bot-message {
-    width: 100% !important;
+    width: 60% !important;
     margin-left: 0 !important;
     border-radius: none;
     
