@@ -1,16 +1,22 @@
 .react-chatbot-kit-chat-container {
     width: 100% !important;
+ 
+  
   }
   
   .react-chatbot-kit-chat-inner-container {
     height: 400px !important;
     background-color: white !important ;
-    border-radius: 0 !important;
+    border-radius: 1px !important;
     padding-bottom: 45px;
+  
+    
   }
+
   
   .react-chatbot-kit-chat-header {
     display: none !important;
+
   }
   
   .react-chatbot-kit-chat-input {
@@ -38,5 +44,7 @@
   .react-chatbot-kit-chat-bot-message {
     width: 100% !important;
     margin-left: 0 !important;
+    border-radius: none;
+    
   }
   

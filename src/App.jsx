@@ -1,14 +1,15 @@
 import "react-chatbot-kit/build/main.css";
-import "./App.css";
+import NotFound from "./NotFound";
 import { Navigate, Routes, Route } from "react-router";
 import { useSelector } from "react-redux";
 import EnterEnrollment from "./components/EnterEnrollment";
 import Home from "./components/Home";
+import Detail from "./components/Detail";
 
 function App() {
   const { register, detail } = useSelector((state) => state.checker);
   return (
-    <div className="flex py-2 w-full justify-center">
+    <div className=" flex w-full h-[500px] justify-center items-center rounded-md  ">
       <div className="max-w-xs w-full border border-black h-auto">
         <Routes>
           <Route
@@ -21,7 +22,7 @@ function App() {
             element={register ? <Home /> : <Navigate to="/login" />}
             exact
           />
-          {/* <Route
+          <Route
             path="/detail"
             element={
               register && detail ? (
@@ -33,8 +34,8 @@ function App() {
               )
             }
             exact
-          /> */}
-          {/* <Route path="*" element={<NotFound />} /> */}
+          />
+          <Route path="//" element={<NotFound />} />
         </Routes>
       </div>
     </div>

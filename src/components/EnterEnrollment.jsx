@@ -7,14 +7,14 @@ export default function EnterEnrollment() {
     dispatch(ENROLL(true));
   };
   return (
-    <div className="p-4 flex items-center h-full">
-      <div className="flex gap-2 flex-col w-full h-[200px] items-center justify-center rounded-md">
+    <div className=" w-full p-4 flex items-center h-full justify-center ">
+      <div className="flex gap-2 flex-col w-full h-[400px] rounded-md items-center justify-center">
         <p className=" w-full p-2 flex items-start font-serif font-semibold">
           Enter into student info system.
         </p>
         <button
           type="submit"
-          className="w-full flex text-center p-2  rounded-md border-none  bg-blue-500"
+          className="w-full flex text-center justify-center p-2  rounded-md border-none bg-gray-600 text-white"
           onClick={Enroll}
         >
           Enroll Now

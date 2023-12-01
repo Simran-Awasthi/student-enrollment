@@ -1,9 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-//this is redux folder
-
-const nameCapital = (naam) => {
-  return naam.charAt(0).toUpperCase() + naam.slice(1);
+const nameCapital = (name) => {
+  return name.charAt(0).toUpperCase() + name.slice(1);
 };
 
 export const user = createSlice({
@@ -11,6 +9,8 @@ export const user = createSlice({
   initialState: {
     register: false,
     detail: false,
+    name: "",
+    age: "",
   },
   reducers: {
     ENROLL: (state, action) => {
@@ -19,8 +19,14 @@ export const user = createSlice({
     SHOW: (state, action) => {
       return { ...state, register: action.payload };
     },
+    NAME: (state, action) => {
+      return { ...state, name: nameCapital(action.payload) };
+    },
+    AGE: (state, action) => {
+      return { ...state, age: action.payload, detail: true };
+    },
   },
 });
 
-export const { ENROLL, SHOW } = user.actions;
+export const { ENROLL, SHOW, NAME, AGE } = user.actions;
 export default user.reducer;
