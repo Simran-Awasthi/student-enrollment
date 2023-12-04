@@ -42,6 +42,8 @@ const Slot = (props) => {
 
       button.setAttribute("disabled", true);
     });
+
+    props.actions.showNameInputMessage();
   };
 
   const handleMorningButtonClick = (event) => {
@@ -110,7 +112,7 @@ const Slot = (props) => {
       <button
         key={option.id}
         id={option.id}
-        className={styleBtn}
+        // className={}
         onClick={handleClick}
       >
         {option.text}
@@ -119,7 +121,7 @@ const Slot = (props) => {
   };
 
   return (
-    <div className="flex flex-col gap-6 pt-4 pb-3">
+    <div className="flex flex-col gap-6 pt-4 pb-10">
       {/* ... (omitted for brevity) ... */}
 
       <div className="w-full flex flex-col gap-3 font-medium">

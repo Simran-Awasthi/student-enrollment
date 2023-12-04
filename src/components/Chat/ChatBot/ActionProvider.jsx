@@ -82,6 +82,7 @@ const MyActionProvider = ({ createChatBotMessage, setState, children }) => {
           actions: {
             showGotItMessage,
             showSlotMessage,
+            showNameInputMessage,
             showAgeInputMessage,
             showThankYouMessage,
             showCustomResponse,

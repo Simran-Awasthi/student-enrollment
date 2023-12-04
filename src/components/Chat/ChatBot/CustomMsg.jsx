@@ -5,7 +5,8 @@ export default function UniqueMessageBox(props) {
 
   const handleGotItClick = (e) => {
     // Trigger the "gotItMsg" action via props
-    props.actions.gotItMsg();
+    console.log(props.actions);
+    props.actions.showGotItMessage();
 
     // Disable the button to prevent further clicks
     e.target.setAttribute("disabled", true);
