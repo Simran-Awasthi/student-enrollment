@@ -189,7 +189,7 @@ const Slot = (props) => {
           <div className="flex  gap-8 " id="dayDates">
             {renderDateButtons}
           </div>
-          <button className="text-3xl absolute right-[-4px]">
+          <button className="text-3xl absolute right-[6px]">
             <ArrowRight />
           </button>
         </div>
