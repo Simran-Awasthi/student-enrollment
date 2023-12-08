@@ -11,7 +11,7 @@ export default function Home() {
   };
   return (
     <div className="flex flex-col w-full ">
-      <div className="bg-white  items-center border-[1.5px]  flex justify-between py-2 px-3 text-black ">
+      <div className="bg-white border-[1.5px]  shadow-md flex justify-between py-2 px-3 text-black ">
         <div className="w-24 ">
           <img src={logo} className="w-full" alt="" />
         </div>

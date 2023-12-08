@@ -19,7 +19,9 @@ export default function CountDown() {
 
   return (
     <div className="flex w-full justify-start">
-      <div className="bg-[#4c33cd] text-white  rounded-full">{number} s</div>
+      <div className="bg-[#4c33cd] text-white  rounded-full py-2 px-3">
+        {number} s
+      </div>
     </div>
   );
 }

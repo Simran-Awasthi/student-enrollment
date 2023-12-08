@@ -27,7 +27,7 @@ export default function UniqueMessageBox(props) {
   return (
     <div
       ref={containerRef}
-      className="ml-16 border-2 px-2 py-1 rounded-md border-gray-400 text-gray-500 bg-white hover:border-[#ff00ff] hover:bg-[#ff00ff] hover:text-white w-min"
+      className="ml-16 border-2 px-2 py-1 rounded-md border-gray-400 text-gray-500 bg-white hover:border-[#4c33cd] hover:bg-[#4c33cd] hover:text-white w-min"
     >
       <button className="truncate" onClick={handleGotItClick}>
         Got It

@@ -1,4 +1,25 @@
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
+
+const DAYs = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const MONTHs = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+const today = new Date();
+const di = today.getDay();
+const DATEs = today.getDate();
+const mi = today.getMonth();
 
 const Slot = (props) => {
   const [selectedSlot, setSelectedSlot] = useState({
@@ -6,9 +27,26 @@ const Slot = (props) => {
     date: "",
     time: "",
   });
-
   const morningRef = useRef(null);
   const noonRef = useRef(null);
+  const dateRef = useRef(null);
+  const DaDate = [
+    {
+      date: DATEs + 0 + " " + MONTHs[mi],
+      day: DAYs[di],
+      id: "date1",
+    },
+    {
+      date: DATEs + 1 + " " + MONTHs[mi],
+      day: DAYs[di + 1],
+      id: "date2",
+    },
+    {
+      date: DATEs + 2 + " " + MONTHs[mi],
+      day: DAYs[0],
+      id: "date3",
+    },
+  ];
 
   const disableAllButtons = (buttonsRef) => {
     buttonsRef.current.childNodes.forEach((button) => {
@@ -100,6 +138,21 @@ const Slot = (props) => {
     },
   ];
 
+  const handleDateButtonClick = (event) => {
+    const clickedButton = event.target;
+    const buttonId = clickedButton.id;
+    const dateSlot = DaDate.find((date) => date.id === buttonId);
+    if (dateSlot) {
+      setSelectedSlot({
+        ...selectedSlot,
+        date: dateSlot.date,
+        day: dateSlot.day,
+      });
+    }
+
+    props.actions.showNameInputMessage();
+  };
+
   useEffect(() => {
     const { day, date, time } = selectedSlot;
     if (day && date && time) {
@@ -109,20 +162,38 @@ const Slot = (props) => {
 
   const renderButtons = (slotArray, handleClick) => {
     return slotArray.map((option) => (
-      <button
-        key={option.id}
-        id={option.id}
-        // className={}
-        onClick={handleClick}
-      >
+      <button key={option.id} id={option.id} onClick={handleClick}>
         {option.text}
       </button>
     ));
   };
 
+  const renderDateButtons = DaDate.map((option) => (
+    <button key={option.id} id={option.id} onClick={handleDateButtonClick}>
+      <p>{option.date}</p>
+      <p>{option.day}</p>
+    </button>
+  ));
+
   return (
-    <div className="flex flex-col gap-6 pt-4 pb-10">
-      {/* ... (omitted for brevity) ... */}
+    <div className="flex flex-col gap-6 pt-4 pb-2">
+      <div className="w-full flex items-center relative justify-center font-medium">
+        <div
+          className="flex justify-between items-center"
+          id="dates"
+          ref={dateRef}
+        >
+          <button className=" text-3xl absolute left-[6px] ">
+            <ArrowLeft />
+          </button>
+          <div className="flex  gap-8 " id="dayDates">
+            {renderDateButtons}
+          </div>
+          <button className="text-3xl absolute right-[-4px]">
+            <ArrowRight />
+          </button>
+        </div>
+      </div>
 
       <div className="w-full flex flex-col gap-3 font-medium">
         <p className="text-gray-500 ">Morning</p>

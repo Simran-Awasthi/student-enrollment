@@ -7,7 +7,7 @@ export default function EnterEnrollment() {
     dispatch(ENROLL(true));
   };
   return (
-    <div className=" w-full p-4 flex items-center h-full justify-center ">
+    <div className=" w-full p-4 flex items-center h-full  justify-center ">
       <div className="flex gap-2 flex-col w-full h-[400px] rounded-md items-center justify-center">
         <p className=" w-full p-2 flex items-start font-serif font-semibold">
           Enter into student info system.
